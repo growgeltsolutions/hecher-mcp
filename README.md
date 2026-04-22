@@ -2,7 +2,7 @@
 
 The official **Model Context Protocol (MCP)** server for [Hecher](https://hecher.app) — the multi-tenant CRM for Chabad shluchim by [Grow Gelt](https://hecher.app).
 
-Connect Claude Desktop, ChatGPT, Cursor, or any other MCP‑compatible AI assistant to your Hecher account and let it search donors, record donations, run reports, and manage tasks for you — across all of your organizations (Mosads).
+Connect Claude Desktop, ChatGPT, Cursor, or any other MCP‑compatible AI assistant to your Hecher account and let it search donors, record donations, run reports, and manage tasks for you — across all of your organizations (mosads).
 
 > **Heads up:** This repository is the public listing and documentation for the Hecher MCP server. The server itself runs as a managed remote service at `https://api.hecher.app/mcp` — there is nothing to install or self-host.
 
