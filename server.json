@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.growgeltsolutions/hecher-mcp",
   "title": "Hecher CRM",
-  "description": "Manage your Hecher (Grow Gelt) CRM from any MCP-compatible AI assistant — search donors, record donations, run reports, manage tasks, and more across your organizations (Mosads).",
+  "description": "Hecher CRM for Chabad shluchim — donors, donations, activities, and reports across your Mosads",
   "version": "1.12.01",
   "websiteUrl": "https://hecher.app",
   "repository": {
