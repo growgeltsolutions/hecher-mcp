@@ -1,0 +1,136 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.growgeltsolutions/hecher-mcp",
+  "title": "Hecher CRM",
+  "description": "Manage your Hecher (Grow Gelt) CRM from any MCP-compatible AI assistant — search donors, record donations, run reports, manage tasks, and more across your organizations (Mosads).",
+  "version": "1.12.01",
+  "websiteUrl": "https://hecher.app",
+  "repository": {
+    "url": "https://github.com/growgeltsolutions/hecher-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.hecher.app/mcp"
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "vendor": "Grow Gelt",
+      "categories": [
+        "crm",
+        "productivity",
+        "nonprofit",
+        "fundraising"
+      ],
+      "tags": [
+        "crm",
+        "donors",
+        "donations",
+        "fundraising",
+        "chabad",
+        "shluchim",
+        "nonprofit"
+      ],
+      "auth": {
+        "type": "oauth2.1",
+        "authorizationEndpoint": "https://api.hecher.app/oauth/authorize",
+        "tokenEndpoint": "https://api.hecher.app/oauth/token",
+        "registrationEndpoint": "https://api.hecher.app/oauth/register",
+        "metadataEndpoint": "https://api.hecher.app/.well-known/oauth-authorization-server",
+        "dynamicClientRegistration": true
+      },
+      "documentation": {
+        "setup": "Add https://api.hecher.app/mcp as a remote MCP server in your client (Claude Desktop, ChatGPT, Cursor, etc.). On first use you'll be redirected to sign in to Hecher and approve access. Manage and revoke connections anytime under Settings → AI Connections.",
+        "support": "https://hecher.app"
+      },
+      "capabilities": {
+        "tools": [
+          {
+            "name": "list_tenants",
+            "description": "List the organizations (Mosads) you have access to."
+          },
+          {
+            "name": "set_active_tenant",
+            "description": "Choose which Mosad subsequent calls operate on."
+          },
+          {
+            "name": "get_active_tenant",
+            "description": "Show the currently active Mosad."
+          },
+          {
+            "name": "search_donors",
+            "description": "Search donors by name, email, phone, tag, or status."
+          },
+          {
+            "name": "get_donor",
+            "description": "Fetch a donor's full profile, including stats and contact info."
+          },
+          {
+            "name": "create_donor",
+            "description": "Create a new donor record."
+          },
+          {
+            "name": "update_donor",
+            "description": "Update an existing donor record."
+          },
+          {
+            "name": "delete_donor",
+            "description": "Soft-delete a donor record."
+          },
+          {
+            "name": "add_donor_tag",
+            "description": "Add a tag to a single donor."
+          },
+          {
+            "name": "remove_donor_tag",
+            "description": "Remove a tag from a single donor."
+          },
+          {
+            "name": "bulk_tag_donors",
+            "description": "Add a tag to many donors at once (queued)."
+          },
+          {
+            "name": "list_donations",
+            "description": "List donations, optionally filtered by donor or date."
+          },
+          {
+            "name": "create_donation",
+            "description": "Record a new donation."
+          },
+          {
+            "name": "update_donation",
+            "description": "Update an existing donation."
+          },
+          {
+            "name": "delete_donation",
+            "description": "Delete a donation."
+          },
+          {
+            "name": "list_activities",
+            "description": "List activities/tasks, optionally filtered by donor, status, or assignee."
+          },
+          {
+            "name": "create_activity",
+            "description": "Create a new activity (task, call, meeting, note)."
+          },
+          {
+            "name": "complete_activity",
+            "description": "Mark an activity as complete."
+          },
+          {
+            "name": "get_dashboard_stats",
+            "description": "Fetch dashboard KPIs for the active Mosad."
+          },
+          {
+            "name": "run_report",
+            "description": "Execute a saved report and return results."
+          }
+        ]
+      },
+      "permissions": "Acts with the permissions of the signed-in user in whichever Mosad they pick as active. All RLS, billing gates, and audit logging from the Hecher API gateway apply.",
+      "rateLimits": "Inherits the per-user rate limits of the Hecher API gateway."
+    }
+  }
+}
